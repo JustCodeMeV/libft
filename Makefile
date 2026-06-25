@@ -1,7 +1,7 @@
 TARGET_EXEC := libft.a
 
 BUILD_DIR := ./build
-SRC_DIRS := ./src ./lib
+SRC_DIRS := ./src
 CFLAGS := -c -Wall -Wextra -Werror -g
 
 SRCS := $(shell find $(SRC_DIRS) -name '*.c')
@@ -21,9 +21,11 @@ $(BUILD_DIR)/%.c.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY: fclean
+
 fclean:
 	rm -r $(BUILD_DIR)
 	rm ./libft.a
 
 -include $(DEPS)
+
+.PHONY: fclean

@@ -10,4 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+int	ft_isalpha(char *str);
+int	ft_isdigit(char *str);
+int	ft_strlen(const char *s);
