@@ -6,20 +6,15 @@
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 15:05:13 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/06/17 15:07:39 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/06/25 16:33:12 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../include/libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
+	if (!(c >= '0' && c <= '9'))
+		return (0);
+	else
+		return (1);
 }

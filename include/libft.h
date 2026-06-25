@@ -11,5 +11,5 @@
 /* ************************************************************************** */
 
 int	ft_isalpha(char *str);
-int	ft_isdigit(char *str);
+int	ft_isdigit(int c);
 int	ft_strlen(const char *s);
