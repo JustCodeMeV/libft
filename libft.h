@@ -6,7 +6,7 @@
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 14:24:30 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/03 18:20:46 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/07/03 18:29:10 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -22,3 +22,4 @@ int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
