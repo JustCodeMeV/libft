@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/17 14:24:30 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/03 17:21:45 by vrouxel          ###   ########.fr       */
+/*   Created: 2026/07/03 17:19:30 by vrouxel           #+#    #+#             */
+/*   Updated: 2026/07/03 17:24:23 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "../libft.h"
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_strlen(const char *s);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-int	ft_isalnum(int c);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (!n || !s1 || !s2)
+		return (0);
+	while (s1[i] && s1[i] == s2[i] && i < n - 1)
+	{
+		i++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char) s2[i]);
+}
