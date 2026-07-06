@@ -26,3 +26,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_atoi(const char *nptr);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
