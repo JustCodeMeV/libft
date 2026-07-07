@@ -9,6 +9,7 @@
 /*   Updated: 2026/07/04 20:14:10 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 static int	is_space(char c)
 {
@@ -37,7 +38,7 @@ int	ft_atoi(const char *nptr)
 			sign = -sign;
 		i++;
 	}
-	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[i] && ft_isdigit(nptr[i]))
 	{
 		res = res * 10 + (nptr[i] - '0');
 		i++;

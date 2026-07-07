@@ -1,7 +1,7 @@
 TARGET_EXEC := libft.a
 
 BUILD_DIR := ./build
-SRC_DIRS := ./src
+SRC_DIRS := .
 CFLAGS := -c -Wall -Wextra -Werror -g
 
 SRCS := $(shell find $(SRC_DIRS) -name '*.c')

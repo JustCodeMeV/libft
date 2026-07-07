@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/03 18:48:28 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/03 18:50:26 by vrouxel          ###   ########.fr       */
+/*   Created: 2026/07/06 15:18:31 by vrouxel           #+#    #+#             */
+/*   Updated: 2026/07/06 15:39:06 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*tmp_dest;
+	unsigned char	*tmp_src;
 
+	if (!dest || !src || n == 0)
+		return (dest);
+	tmp_dest = (unsigned char *)dest;
+	tmp_src = (unsigned char *)src;
 	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i])
-		i++;
-	while (i >= 0)
+	while (i < n)
 	{
-		if (s[i] == (char) c)
-			return ((char *) &s[i]);
-		i--;
+		tmp_dest[i] = tmp_src[i];
+		i++;
 	}
-	return (NULL);
+	dest = (void *)tmp_dest;
+	return (dest);
 }
