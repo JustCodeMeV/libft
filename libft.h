@@ -6,10 +6,11 @@
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 14:24:30 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/06 15:23:56 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/07/17 15:47:30 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
+#include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -28,3 +29,4 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_atoi(const char *nptr);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	*ft_strdup(const char *s);
