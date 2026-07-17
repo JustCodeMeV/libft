@@ -6,7 +6,7 @@
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 14:24:30 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/17 16:00:42 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/07/17 17:35:31 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -31,3 +31,4 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strdup(const char *s);
 void	*ft_memmove(void *dest, const void *src, size_t n);
+void	ft_bzero(void *s, size_t n);
