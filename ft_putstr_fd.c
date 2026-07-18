@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/18 19:23:45 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/18 19:23:48 by vrouxel          ###   ########.fr       */
+/*   Created: 2026/07/18 20:09:53 by vrouxel           #+#    #+#             */
+/*   Updated: 2026/07/18 20:09:57 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*join;
 	size_t	i;
-	size_t	j;
 
-	if (!s1 || !s2)
-		return (NULL);
-	join = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
-	if (!join)
-		return (NULL);
+	if (!s || *s == '\0')
+		return ;
 	i = 0;
-	j = 0;
-	while (s1[i])
-		join[j++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		join[j++] = s2[i++];
-	join[j] = 0;
-	return (join);
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
