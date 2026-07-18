@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrouxel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/18 21:05:36 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/07/18 21:05:39 by vrouxel          ###   ########.fr       */
+/*   Created: 2026/07/18 21:20:21 by vrouxel           #+#    #+#             */
+/*   Updated: 2026/07/18 21:20:24 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
-	char	*res;
 
 	if (!s || !f)
-		return (NULL);
+		return ;
 	i = 0;
-	res = ft_strdup(s);
 	while (s[i])
 	{
-		res[i] = f(i, res[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	return (res);
 }
