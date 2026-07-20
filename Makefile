@@ -1,31 +1,31 @@
-TARGET_EXEC := libft.a
+NAME        := libft.a
 
-BUILD_DIR := ./build
-SRC_DIRS := .
-CFLAGS := -c -Wall -Wextra -Werror -g
+BUILD_DIR   := build
+SRC_DIRS    := .
+CC          := cc
+CFLAGS      := -Wall -Wextra -Werror
 
-SRCS := $(shell find $(SRC_DIRS) -name '*.c')
+SRCS        := $(wildcard $(SRC_DIRS)/*.c)
+OBJS        := $(SRCS:%.c=$(BUILD_DIR)/%.o)
+DEPS        := $(OBJS:.o)
 
-OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
+all: $(NAME)
 
-DEPS := $(OBJS:.o=.d)
-
-INC_DIRS := ./include
-INC_FLAGS := $(addprefix -I,$(INC_DIRS))
-
-$(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
+$(NAME): $(OBJS)
 	ar -rcs $@ $^
-	mv ./build/libft.a ./libft.a
 
-$(BUILD_DIR)/%.c.o: %.c
-	mkdir -p $(dir $@)
+$(BUILD_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+clean:
+	rm -rf $(BUILD_DIR)
 
-fclean:
-	rm -r $(BUILD_DIR)
-	rm ./libft.a
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
 
 -include $(DEPS)
 
-.PHONY: fclean
+.PHONY: all clean fclean re

@@ -34,12 +34,12 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static void	*free_all(char **tab, size_t len)
+static void	*free_all(char **tab, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (i < size)
 	{
 		free(tab[i]);
 		i++;
@@ -69,23 +69,24 @@ static char	*get_token(const char *s, int head, int tail)
 
 static char	**tokenize(char **tab, const char *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		tok;
+	size_t			i;
+	size_t			j;
+	int				is_tok;
+	const size_t	len = ft_strlen(s);
 
 	i = 0;
 	j = 0;
-	tok = -1;
-	while (i <= ft_strlen(s))
+	is_tok = -1;
+	while (i <= len)
 	{
-		if (s[i] != c && tok < 0)
-			tok = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && tok >= 0)
+		if (s[i] != c && is_tok < 0)
+			is_tok = i;
+		else if ((s[i] == c || i == len) && is_tok >= 0)
 		{
-			tab[j] = get_token(s, tok, i);
+			tab[j] = get_token(s, is_tok, i);
 			if (!(tab[j]))
 				return (free_all(tab, j));
-			tok = -1;
+			is_tok = -1;
 			j++;
 		}
 		i++;
@@ -97,6 +98,8 @@ char	**ft_split(const char *s, char c)
 {
 	char			**tab;
 
+	if (!s)
+		return (NULL);
 	tab = ft_calloc(count_words(s, c) + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
