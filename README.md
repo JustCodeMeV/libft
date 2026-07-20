@@ -187,3 +187,5 @@ This README file was generated using Perplexity LLM then adjusted manually.
 - Lot of rubber duck talking
 - Lot of fellow students <3
 - Lot of coffee
+
+*La route est longue, mais la voie est libre*
